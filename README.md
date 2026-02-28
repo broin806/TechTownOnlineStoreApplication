@@ -18,3 +18,5 @@ This project demonstrates backend development skills including:
 - REST-style routing with Express  
 - Server-side validation    
 - SQL database integration  
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/6adab7ab-191d-442b-a33e-57967eee95c6" />
