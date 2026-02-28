@@ -1,0 +1,73 @@
+/* Broinson Jeyarajah*/
+/* 2024-12-05 */
+/* REFERENCES */
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_responsive_header */
+input[type="text"]
+{
+
+    width: 100%;
+    padding: 8px;
+}
+
+input[type="phone"] {
+    width: 100%;
+    padding: 8px;
+}
+
+
+
+button:hover{
+    background-color: #2980b9;
+}
+
+#button {
+    padding:15px;
+    border: none;
+    background-color: gray;
+}
+
+
+#currentErrors {
+    color: red;
+}
+
+#Errors {
+    color: red; 
+    font-weight: bold; 
+    margin-top: 10px; 
+}
+
+h3 {
+    color: green;
+}
+
+h4 {
+    color: green;
+}
+
+
+th, td {
+    border: 1px solid black;
+    padding: 20px;
+    background-color: burlywood;
+}
+
+
+body {
+    padding: 20px;
+    background-color: #f4f4f4;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h3 {
+    color: darkblue;
+}
+
+form {
+    background-color: navajowhite;
+    padding: 20px;
+
+}
+

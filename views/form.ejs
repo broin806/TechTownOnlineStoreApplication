@@ -1,0 +1,203 @@
+<!-- Broinson Jeyarajah -->
+<!-- 2024-12-05 -->
+<!-- References: -->
+<!-- https://www.shecodes.io/athena/79909-how-to-select-data-from-li-elements-displayed-in-ejs-using-foreach -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap added -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- <link rel="stylesheet" href="/css/form.css"> -->
+
+    <title>Tech Town Store</title>
+</head>
+
+<body class="bg-light">
+    <% pageData = pageData || {}; %>
+    <div class="container py-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <h1 class="h3 mb-0">Tech Town</h1>
+    
+            </div>
+            <a class="btn btn-outline-secondary btn-sm" href="/receiptdisplay">View All Receipts</a>
+        </div>
+
+        <!--  goes to method post-->
+        <form action="/" method="POST">
+
+            <!-- error section -->
+            <div id="Errors">
+                <% if ( errors && errors.length > 0) { %>
+                    <div class="alert alert-danger py-2">
+                        <div class="fw-semibold">Something went wrong while submitting your order!</div>
+                        <!-- snippets through each error in array and displays in list format with msg -->
+                        <% errors.forEach(function(error) { %>
+                            <div id="currentErrors" class="small"><%= error.msg %></div>
+                        <% }); %>
+                    </div>
+                <% } %>
+            </div>
+
+
+            <div class="row g-3">
+                <!-- Personal Info -->
+                <div class="col-12 col-lg-6">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-3">
+                            <div id="mandatory_fields">
+                                <h3 class="h6 mb-3">Personal Information</h3>
+
+                                <div class="mb-2">
+                                    <label class="form-label mb-1">Name</label>
+                                    <input class="form-control form-control-sm" id="name" name="name" type="text" value="<%= pageData.name%>">
+                                </div>
+
+                                <div class="mb-2">
+                                    <label class="form-label mb-1">Email</label>
+                                    <input class="form-control form-control-sm" id="email" name="email" type="text" value="<%= pageData.email%>">
+                                </div>
+
+                                <div class="mb-2">
+                                    <label class="form-label mb-1">Phone Number</label>
+                                    <input class="form-control form-control-sm" id="phone" name="phone" type="phone" value="<%= pageData.phone%>">
+                                </div>
+
+                                <div class="mb-2">
+                                    <label class="form-label mb-1">Address</label>
+                                    <input class="form-control form-control-sm" id="address" name="address" type="text" value="<%= pageData.address%>">
+                                </div>
+
+                                <div class="row g-2">
+                                    <div class="col-md-6">
+                                        <label class="form-label mb-1">City</label>
+                                        <input class="form-control form-control-sm" id="city" name="city" type="text" value="<%= pageData.city%>">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label mb-1">Province</label>
+                                        <input class="form-control form-control-sm" id="province" name="province" type="text" value="<%= pageData.province%>">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Items -->
+                <div class="col-12 col-lg-6">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-3">
+                            <div id="items">
+                                <h3 class="h6 mb-3">Select Items</h3>
+
+                                <div class="list-group list-group-flush">
+                                    <label class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                        <div>
+                                            <input class="form-check-input me-2" type="checkbox" id="item1" name="selectedItems" value="USB Charger,15">
+                                            USB Charger
+                                        </div>
+                                        <span class="badge text-bg-secondary">$15</span>
+                                    </label>
+
+                                    <label class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                        <div>
+                                            <input class="form-check-input me-2" type="checkbox" id="item2" name="selectedItems" value="Screen Protector,7">
+                                            Iphone 16 Screen Protector
+                                        </div>
+                                        <span class="badge text-bg-secondary">$7</span>
+                                    </label>
+
+                                    <label class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                        <div>
+                                            <input class="form-check-input me-2" type="checkbox" id="item3" name="selectedItems" value="Wireless Headphones,130">
+                                            Wireless Headphones
+                                        </div>
+                                        <span class="badge text-bg-secondary">$130</span>
+                                    </label>
+
+                                    <label class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                        <div>
+                                            <input class="form-check-input me-2" type="checkbox" id="item4" name="selectedItems" value="Wireless Earbuds,30">
+                                            Wireless Earbuds
+                                        </div>
+                                        <span class="badge text-bg-secondary">$30</span>
+                                    </label>
+
+                                    <label class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                        <div>
+                                            <input class="form-check-input me-2" type="checkbox" id="item5" name="selectedItems" value="USB Flash Drive Case,8">
+                                            USB Flash Drive Case
+                                        </div>
+                                        <span class="badge text-bg-secondary">$8</span>
+                                    </label>
+
+                                    <label class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                        <div>
+                                            <input class="form-check-input me-2" type="checkbox" id="item6" name="selectedItems" value="Iphone Fast Charger,22">
+                                            Iphone Fast Charger
+                                        </div>
+                                        <span class="badge text-bg-secondary">$22</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary w-100 mt-3" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+ 
+                <!-- Receipt Summary (same page) -->
+                <div class="col-12">
+                    <div id="Result">
+                        <!-- order items through pageData set in app.js -->
+      <% if ((!errors || errors.length === 0) && pageOutputData && JSON.stringify(pageOutputData) !== '{}') { %>
+                            <div class="card shadow-sm">
+                                <div class="card-body p-3">
+                                    <h3 class="h6 mb-2">Summary of Receipt</h3>
+
+                                    <div class="row g-2 small">
+                                        <div class="col-md-6">Name: <strong><%= pageOutputData.name %></strong></div>
+                                        <div class="col-md-6">Email: <strong><%= pageOutputData.email %></strong></div>
+                                        <div class="col-md-6">Phone: <strong><%= pageOutputData.phone %></strong></div>
+                                        <div class="col-md-6">Province: <strong><%= pageOutputData.province %></strong></div>
+                                        <div class="col-12">Address: <strong><%= pageOutputData.address %></strong></div>
+                                        <div class="col-12">City: <strong><%= pageOutputData.city %></strong></div>
+                                    </div>
+
+                                    <div class="mt-2">
+                                        <div class="fw-semibold small">Products selected:</div>
+                                        <ul class="small mb-2">
+                                            <!-- converts, and lists selected items from pageOutputData.selectedItems -->
+                                            <% if (pageOutputData.selectedItems) { %>
+                                                <% let items =  Array.isArray(pageOutputData.selectedItems) ? pageOutputData.selectedItems : [pageOutputData.selectedItems]; %>
+                                                <% items.forEach(function(item) { %>
+                                                    <li><%= item %></li>
+                                                <% }); %>
+                                            <% } %>
+                                        </ul>
+
+                                        <!-- moves total to two decimal places and prcings total  -->
+                                        <div class="alert alert-success py-2 mb-0">
+                                            Total Price: <strong>$<%= pageOutputData.total ? pageOutputData.total.toFixed(2) : "0.00" %></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS added -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
