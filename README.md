@@ -19,4 +19,5 @@ This project demonstrates backend development skills including:
 - Server-side validation    
 - SQL database integration  
 
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/6adab7ab-191d-442b-a33e-57967eee95c6" />
+<img width="1918" height="802" alt="image" src="https://github.com/user-attachments/assets/3ccda6ba-2164-4b33-862a-530075978824" />
+
